@@ -19,7 +19,7 @@
 
 - [R](https://www.r-project.org/)
 - [Shiny](https://shiny.posit.co/)
-- Pacotes: `dplyr`, `lubridate`, `ggplot2`, `DT`
+- Pacotes: `dplyr`, `lubridate`, `ggplot2`, `DT`, `tidyr`
 
 ---
 
@@ -44,6 +44,7 @@ CashFlowBuilder/
 ├── server.R           # Lógica de cálculo e renderização
 ├── CashFlowBuilder.Rproj
 ├── .gitignore
+├── dados.csv       # Arquivo modelo para testes (inclui ativos fictícios)
 └── data/
     └── ativos.csv     # Exemplo de base de ativos (opcional)
 
