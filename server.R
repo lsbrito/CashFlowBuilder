@@ -3,6 +3,7 @@ library(dplyr)
 library(lubridate)
 library(ggplot2)
 library(DT)
+library(tidyr)   # <- necessário para unnest()
 
 shinyServer(function(input, output) {
   
@@ -28,7 +29,7 @@ shinyServer(function(input, output) {
         valor_cupom = valor_investimento * taxa_total / 2,
         datas = list(seq.Date(from = Sys.Date(), by = "6 months", length.out = total_cupons))
       ) %>%
-      unnest(cols = c(datas)) %>%
+      tidyr::unnest(cols = c(datas)) %>%
       select(nome, codigo, tipo, datas, valor_cupom)
     
     # 🏷️ Renomear colunas para exibição
@@ -68,10 +69,10 @@ shinyServer(function(input, output) {
     df <- ativos()
     req(df)
     
-    # 🔢 IPCA mais recente (definido no global.R ou informado manualmente)
+    # 🔢 IPCA mais recente
     ipca <- ifelse(is.na(ipca_atual), input$ipca_proj / 100, ipca_atual)
     
-    # 🧪 Filtro por critérios internos: taxa IPCA+ e isenção de IR
+    # 🧪 Filtro por critérios internos
     filtrados <- df %>%
       filter(
         taxa_ipca_aa > 0,
