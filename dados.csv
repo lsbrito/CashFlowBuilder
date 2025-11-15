@@ -1,0 +1,5 @@
+nome,codigo,tipo,valor_investimento,taxa_ipca_aa,total_cupons,isento_ir,vencimento,semestre_01,semestre_02
+Debênture Energias BR,DEB001,Debênture,10000,6.5,8,Sim,2030-06-30,2026-06-30,2026-12-30
+CRA AgroVale,CRA101,CRA,15000,5.8,10,Sim,2032-12-31,2026-06-30,2026-12-30
+CRI Shopping Sul,CRI202,CRI,20000,5.2,12,Não,2031-12-31,2026-06-30,2026-12-30
+Debênture Logística,DEB303,Debênture,12000,7.0,6,Sim,2029-06-30,2026-06-30,2026-12-30
